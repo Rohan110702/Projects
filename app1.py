@@ -7,7 +7,7 @@ import streamlit as st
 # Load the dataset
 @st.cache_data
 def load_data():
-    filepath = r"C:\Users\ROHAN\OneDrive\Desktop\jupyter-python\archive (1)\tmdb_5000_movies.csv"
+    filepath =  "tmdb_5000_movies.csv"
     movies = pd.read_csv(filepath)
     movies = movies[['title', 'genres', 'overview', 'vote_average', 'popularity']]
     movies['genres'] = movies['genres'].apply(lambda x: ", ".join([genre['name'] for genre in ast.literal_eval(x)]))
